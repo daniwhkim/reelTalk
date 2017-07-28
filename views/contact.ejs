@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<% include header.ejs %>
+
+		<div class="modal contactSuccess">
+			<div class="right">
+				<img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-48.png" class="closeButtonRedirect">
+			</div>
+			<h1>Thank you</h1>
+			<p>Your message has been sent. We'll get back to ya when we get back to ya.</p>
+		</div>
+
+		<div class="modal contactError">
+			<div class="right">
+				<img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-48.png" class="closeButtonRedirect">
+			</div>
+			<p>Something went wrong. Your message has not been sent. Try again later.</p>
+		</div>
+
+		<div class="section contact">
+			<div class="container">
+				<div class="row">
+					<div class="column large-6 small-12">
+						<h2>Contact Us</h2>
+						<p>Lorem ipsum dolor sit amet, verear blandit copiosae ex eos, cum sumo vituperata ullamcorper an. Ipsum option vel ea, vide appareat splendide vix cu.</p>
+						<form id="contactForm">
+							<div class="wrapper">
+								<label>Name</label>
+								<input id="userName" type="text" name="name" class="validate">
+								<p>Please enter your name</p>
+							</div>
+
+							<div class="wrapper">
+								<label>Email</label>
+								<input id="userEmail" type="email" name="email" class="validate">
+								<p>Please enter your email</p>
+							</div>
+
+							<div class="wrapper">
+								<label>Message</label>
+								<textarea id="userMessage" name="text" class="validate"></textarea>
+								<p>Please enter your message</p>
+							</div>
+							<button type="button" id="submitContactForm" class="marginTop">Holler</button>
+						</form>
+					</div>
+
+					<div class="column large-4 small-12">
+						<!-- empty column -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<% include footer.ejs %>
+
+		<script>
+			$(document).ready(function() {
+				$('#submitContactForm').click(function() {
+					// alert('Yup!');
+
+					$('.errorMessage').removeClass('errorMessage');
+
+					var validated = true;
+
+					$('.validate').each(function() {
+						// alert('Clicked!');
+						if ($(this).val() == "") {
+
+							$(this).parent().addClass('errorMessage');
+							validated = false;
+							// alert("Error!");
+						}
+					});
+
+					if (validated == true) {
+						// alert("All fields filled!")
+
+						var userName;
+						var userEmail;
+						var userMessage;
+
+						// $('#submitContactForm').click(function() {
+							userName = $('#userName').val();
+							userEmail = $('#userEmail').val();
+							userMessage = $('#userMessage').val();
+
+							$.post('/email', $('form#contactForm').serialize(),function(data) {
+								if (data === 'Sent') {
+									// alert('Yup!');
+									$('.modal.contactSuccess').css('display', 'block');
+								} else {
+									$('.modal.contactError').css('display', 'block');
+								}
+							});
+						// });
+					};
+
+					$('.closeButtonRedirect').click(function() {
+						$('.modal.contactSuccess').css('display', 'none');
+						window.location = "/";
+					});
+				});
+			});
+
+		</script>
+
+	</body>
+</html>

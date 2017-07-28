@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="grid-1080.css" />
+	</head>
+
+	<body>
+		<form action="/login" method="POST" id="loginForm">
+			<div class="right">
+				<img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-48.png" class="closeButton">
+			</div>
+			<h1>Reel Talk</h1>
+			<h2>Login</h2>
+			<div class="wrapper">
+				<label>Username/Email</label>
+				<input type="text" name="username">
+			</div>
+
+			<div class="wrapper">
+				<label>Password</label>
+				<input type="password" name="password">
+			</div>
+
+			<input type="submit" name="submit" value="Submit" class="userSubmitButton"><br>
+			<a class="goToRegister">Not registered? Register here.</a>	
+		</form>
+
+		<script type="text/javascript">
+			$('.goToRegister').click(function() {
+				$.get('/registration', function(data) {
+					$('.modal.register').html(data);
+					$('.modal.login').css('display', 'none');
+					$('.modal.register').css('display', 'block');
+
+					$('.closeButton').click(function() {
+						$('.modal.register').css('display', 'none');
+					});
+				});	
+			});
+
+			$('form#loginForm').submit(function() {
+				$.post('/login', $('form#loginForm').serialize(),function(data) {
+					if(data == 'Incorrect'){
+						$('.modal.login').html("<p>Your login information is incorrect. Please click try again by clicking 'Login' or contact Reel Talk.</p>");
+					} else {
+						window.location = "/";
+					};
+				});
+
+				return false;
+			});
+
+		</script>
+	</body>
+</html>

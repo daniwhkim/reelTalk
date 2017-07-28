@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<% include header.ejs %>
+
+		<div class="section submission">
+			<div class="container">
+				<div class="row">
+					<div class="column large-6 small-12">
+						<h2>Submit Your Article</h2>
+						<p>Lorem ipsum dolor sit amet, verear blandit copiosae ex eos, cum sumo vituperata ullamcorper an. Ipsum option vel ea, vide appareat splendide vix cu.</p>
+						<form method="POST" action="/submit" enctype="multipart/form-data" class="submitFormValidate">
+							<div class="wrapper">
+								<label>Title</label>
+								<input type="text" name="title" class="validate">
+								<p>Please enter the article title</p>
+							</div>
+
+							<div class="wrapper">
+								<label>Name</label>
+								<input type="text" name="name" class="validate">
+								<p>Please enter your name</p>
+							</div>
+
+							<div class="wrapper">
+								<label>Article</label>
+								<textarea name="article" class="validate"></textarea>
+								<p>Your forgot your article</p>
+							</div>
+
+							<div class="wrapper radioButton">
+								<input type="radio" name="category" value="new" class="categoryInput">
+								<label class="categoryLabel">New Releases</label>
+							</div>
+
+							<div class="wrapper radioButton">
+								<input type="radio" name="category" value="list" class="categoryInput">
+								<label class="categoryLabel">More Lists Please</label>
+							</div>
+
+							<div class="wrapper radioButton">
+								<input type="radio" name="category" value="crowd" class="categoryInput">
+								<label class="categoryLabel">Crowd Pleasers</label>
+							</div>
+
+							<div class="wrapper radioButton">
+								<input type="radio" name="category" value="fave" class="categoryInput">
+								<label class="categoryLabel">Our Faves</label>
+							</div>
+
+							<div class="wrapper">
+								<input type="file" id="fileUpload" name="photo" class="validate">
+								<p>Please upload an image</p>
+							</div>
+							<button class="marginBottom marginTop" id="articleSubmit">Submit</button>
+						</form>
+					</div>
+
+					<div class="column large-4 small-12">
+						<!-- empty column -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<% include footer.ejs %>
+
+	</body>
+</html>

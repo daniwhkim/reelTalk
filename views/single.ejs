@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<% include header.ejs %>
+
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="column large-6 small-12">
+						<% 
+							singleArticleArray.forEach(function(post) {  
+						%>
+								<h2><%= post.title %></h2>
+								<img src="<%= post.photo %>">
+								<p class="articleFont"><%= post.article %></p>
+								<p class="author articleFont">Article written by <%= post.name %>.</p>
+						<% 
+							});
+						%>
+					</div>
+
+					<div class="column large-4 small-12">
+						<!-- empty column -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<% include footer.ejs %>
+
+	</body>
+</html>

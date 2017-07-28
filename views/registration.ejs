@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="styles.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="grid-1080.css" />
+	</head>
+
+	<body>
+		<form action="/register" method="POST" id="registerForm">
+			<div class="right">
+				<img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-48.png" class="closeButton">
+			</div>
+			<h1>Reel Talk</h1>
+			<h2>Register</h2>
+			<div class="wrapper">
+				<label>First & Last Name</label>
+				<input type="text" name="name">
+			</div>
+			
+			<div class="wrapper">
+				<label>Email</label>
+				<input type="email" name="username">
+			</div>
+			
+			<div class="wrapper">
+				<label>Create Password</label>
+				<input type="password" name="password">
+			</div>
+			
+			<input type="submit" name="submit" value="Submit" class="userSubmitButton"><br>
+			<a class="goToLogin">Already a member? Login here.</a>	
+		</form>
+
+		<script type="text/javascript">
+
+			$('.goToLogin').click(function() {
+				$.get('/login',function(data) {
+					$('.modal.login').html(data);
+					$('.modal.register').css('display', 'none');
+					$('.modal.login').css('display', 'block');
+
+					$('.closeButton').click(function() {
+						$('.modal.login').css('display', 'none');
+					});
+				});
+			});
+
+			$('form#registerForm').submit(function() {
+				$.post('/register', $('form#registerForm').serialize(),function(data) {
+					if(data == 'Incorrect') {
+						$('.modal.register').html("<p>Your registration was not saved. Please try again later.</p>");
+					} else {
+						$.get('/login',function(data) {
+							$('.modal.login').html(data);
+							$('.modal.register').css('display', 'none');
+							$('.modal.login').css('display', 'block');
+
+							$('.closeButton').click(function() {
+								$('.modal.login').css('display', 'none');
+							});
+						});
+					};
+				});
+
+				return false;
+			});
+
+		</script>
+	</body>
+</html>

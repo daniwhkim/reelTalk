@@ -1,0 +1,64 @@
+<head>
+	<title>Reel Talk</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="grid-1080.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="modal login">
+	</div>
+
+	<div class="modal register">
+	</div>
+
+	<div class="modal submitError">
+		<div class="right">
+			<img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-48.png" class="closeButton">
+		</div>
+		<h1>Oops!</h1>
+		<p>You need to be logged in to submit articles.</p>
+	</div>
+
+	<div class="section header">
+		<div class="container">
+			<div class="row">
+				<div class="column large-6 medium-6 small-12">
+					<h1><a href="/">Reel Talk</a></h1>
+				</div>
+
+				<div class="column large-6 medium-6 small-12 right">
+					<ul>
+							<% if (!user.username) { %>
+						<li class="submitFromHeader">Submit an Article</li>
+							<% } else { %>
+						<li><a href="/submit">Submit an Article</a></li>
+							<% } %>
+							<% if (!user.username) { %>
+						<li class="loginFromHeader">Login</li>
+							<% } else { %>
+						<li class="loginFromHeader"><a href="/logout">Logout</a></li>
+							<% } %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section navigation">
+		<div class="container">
+			<div class="row">
+				<div class="column large-12 medium-12 small-12">
+					<ul>
+						<li><a href="/newReleases">New Releases</a></li>
+						<li><a href="/moreLists">More Lists Please</a></li>
+						<li><a href="/crowdPleasers">Crowd Pleasers</a></li>
+						<li><a href="/ourFaves">Our Faves</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>

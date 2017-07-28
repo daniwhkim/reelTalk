@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<% include header.ejs %>
+
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="column large-8 small-12 main">
+						<div class="row">
+							<div class="column large-9">
+								    <% 
+										articlesArray.forEach(function(post) {  
+									%>
+										<h2><a href="/getPost?postid=<%= post._id %>"><%= post.title %></a></h2>
+										<h5>By <%= post.name %></h5>
+									<% 
+										});
+									%>
+							</div>
+						</div>
+					</div>
+
+					<div class="column large-4 small-12 sidebar">
+						<div class="row">
+							<div class="column large-12">
+								<h2>Foreign Flix</h2>
+								<img src="http://dl9fvu4r30qs1.cloudfront.net/40/f6/33de00fa4b778f694eba61d9563c/toni-erdmann-poster.jpg">
+								<h4>Toni Erdmann (2016)</h4>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="column large-12">
+								<h2>What I Made My S.O. Watch This Week</h2>
+								<img src="http://www.impawards.com/2016/posters/captain_fantastic.jpg">
+								<h4>Captain Fantasic (2016)</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<% include footer.ejs %>
+
+	</body>
+</html>
