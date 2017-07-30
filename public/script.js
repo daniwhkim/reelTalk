@@ -50,13 +50,13 @@ $(function() {
 	});
 
 // add tinymce to textarea in submit.ejs
-  	tinymce.init({
-	    selector: "textarea",
-	    setup: function (editor) {
-	        editor.on('change', function () {
-	            editor.save(); // value in textarea saving to database and displaying but value not style
-	        });
-	    }
+	tinymce.init({
+    selector: "textarea",
+    setup: function (editor) {
+        editor.on('change', function () {
+            editor.save(); // value in textarea saving to database and displaying but value not style
+        });
+    }
 	});
 
 })

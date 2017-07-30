@@ -8,8 +8,7 @@
 					<div class="column large-6 small-12">
 
 						<h3 class="marginBottom">You searched for: <%= query %></h3>
-
-					    <% 
+					  <% 
 							articlesArray.forEach(function(post) {  
 						%>
 							<h2><a href="/getPost?postid=<%= post._id %>"><%= post.title %></a></h2>
@@ -20,7 +19,7 @@
 					</div>
 
 					<div class="column large-4 small-12">
-						<!-- empty column -->
+					<!-- empty column -->
 					</div>
 				</div>
 			</div>

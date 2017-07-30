@@ -1,7 +1,8 @@
-/*general styles start*/
+/*general and typography styles start*/ /*--------------------*/
 * {
-	font-family: 'Cutive Mono', monospace;
-	/*font-family: Helvetica;*/
+	/*font-family: 'Cutive Mono', monospace;*/
+	font-family: Helvetica, sans-serif;
+	letter-spacing: 2px;
 	/*letter-spacing: 2px;*/
 	box-sizing: border-box;
 }
@@ -16,16 +17,9 @@ body {
 	margin: 0px;
 }
 
+/*section used to wrap all containers*/
 .section {
 	padding: 0px 15px;
-}
-
-.header {
-	border-bottom: 3px solid black;
-}
-
-.footer {
-	border-top: 3px solid black;
 }
 
 .marginBottom {
@@ -42,11 +36,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 }
 
-/*article titles*/
-h2, h2 a { 
+h2, h2 a {
 	font-size: 24px;
 	margin: 20px 0px 10px 0px;
-	font-family: Helvetica;
+	/*font-family: Helvetica;*/
 	font-weight: 700;
 	letter-spacing: 2px;
 }
@@ -58,8 +51,8 @@ h2 a:hover {
 h3 {
 	font-size: 18px;
 	margin: 20px 0px 10px 0px;
-	font-family: Helvetica;
-	font-weight: 700;
+	/*font-family: Helvetica;*/
+	/*font-weight: 700;*/
 	letter-spacing: 2px;
 	/*text-transform: uppercase;*/
 }
@@ -77,7 +70,11 @@ h5 {
 }
 
 p {
-	font-size: 14px
+	font-size: 14px;
+	letter-spacing: 1px;
+	/*line-height: 18px;*/
+	font-weight: 200;
+	line-height: 20px;
 }
 
 p.author {
@@ -85,26 +82,27 @@ p.author {
 }
 
 p.articleFont {
-	font-family: Helvetica;
+	/*font-family: Helvetica;*/
 	letter-spacing: 1px;
-	line-height: 18px;
+	/*line-height: 18px;*/
 	font-weight: 200;
 	line-height: 20px;
+	font-size: 14px;
 }
 
 .right {
 	text-align: right;
 }
-/*general styles end*/
+/*general and typography styles end*/
 
-/*header styles start*/
+/*header styles start*/ /*--------------------*/
 h1, h1 a {
 	line-height: 100px;
 	font-size: 32px;
 	/*margin: 0px 30px;*/
-	font-family: Helvetica;
+	/*font-family: Helvetica;*/
 	font-weight: 700;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	letter-spacing: 2px;
 }
 
@@ -115,24 +113,13 @@ h1, h1 a {
 .header li:hover {
 	background-color: yellow;
 }
+
+.row.border-bottom {
+	border-bottom: 1px solid black;
+}
 /*header styles end*/
 
-/*list styles start*/
-ul {
-	padding: 0px;
-	margin: 0px;
-}
-
-ul li {
-	list-style-type: none;
-	display: inline-block;
-	margin: 34px 30px;
-	line-height: 20px;
-	font-size: 14px;
-}
-/*list styles end */
-
-/*navigation styles start*/
+/*navigation styles start*/ /*--------------------*/
 .navigation ul {
 	text-align: center;
 }
@@ -145,9 +132,22 @@ ul li {
 	border: 1px solid black;
 	font-size: 14px;
 }
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 34px 30px;
+	line-height: 20px;
+	font-size: 14px;
+}
 /*navigation styles end*/
 
-/*footer styles start*/
+/*footer styles start*/ /*--------------------*/
 .footer {
 	margin-bottom: 40px;
 }
@@ -164,13 +164,17 @@ ul li {
 .footer li:hover {
 	background-color: #efefef;
 }
+
+.row.border-top {
+	border-top: 1px solid black;
+}
 /*footer styles end*/
 
 .sidebar p {
 	margin-bottom: 40px;
 }
 
-/*contact styles start*/
+/*contact form styles start*/ /*--------------------*/
 label, input {
 	display: block;
 	font-size: 14px;
@@ -202,7 +206,7 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 	border-radius: none;
-	-webkit-border-radius: 0px; 
+	-webkit-border-radius: 0px;
 }
 
 button {
@@ -216,24 +220,7 @@ button {
 button:hover {
 	background-color: yellow;
 }
-/*contact styles end*/
-
-/*submission styles start*/
-.submission textarea {
-	height: 400px;
-}
-
-#fileUpload {
-	padding-top: 5px;
-	padding-left: 5px;
-	float: left;
-}
-
-#submitContactForm {
-	margin-bottom: 40px;
-}
-
-/*submission styles end*/
+/*contact form styles end*/
 
 /*image styles start*/
 img {
@@ -241,7 +228,7 @@ img {
 }
 /*image styles end*/
 
-/*modal styles start*/
+/*modal styles start*/ /*--------------------*/
 .modal {
 	background-color: white;
 	border: 1px solid black;
@@ -258,12 +245,7 @@ img {
 	margin: 10px auto;
 }
 
-.modal h1 {
-	/*margin: auto;*/
-}
-
 .modal img {
-	/*float: right;*/
 	width: 30px;
 }
 
@@ -286,13 +268,13 @@ img {
 .goToLogin:hover, .goToRegister:hover {
 	background-color: #efefef;
 }
-/*modal styles end*/
 
 .loginFromHeader {
 	margin-right: 0px;
 }
+/*modal styles end*/
 
-/*search form styles start*/
+/*search form styles start*/ /*--------------------*/
 .footer input[type="text"] {
 	width: 45%;
 	display: inline-block;
@@ -308,7 +290,7 @@ img {
 .footer input[type="submit"] {
 	width: 15%;
 	display: inline-block;
-	-webkit-border-radius: 0px; 
+	-webkit-border-radius: 0px;
     border-radius: 0px;
     -webkit-appearance: none;
 	-moz-appearance: none;
@@ -317,7 +299,7 @@ img {
 }
 
 input[type="submit"] {
-	-webkit-border-radius: 0px; 
+	-webkit-border-radius: 0px;
     border-radius: 0px;
     -webkit-appearance: none;
 	-moz-appearance: none;
@@ -354,6 +336,21 @@ li.noMarginRight {
 	background-color: #efefef;
 }
 /*search form styles end*/
+
+/*article submission form styles start*/ /*--------------------*/
+.submission textarea {
+	height: 400px;
+}
+
+#fileUpload {
+	padding-top: 5px;
+	padding-left: 5px;
+	float: left;
+}
+
+#submitContactForm {
+	margin-bottom: 40px;
+}
 
 form.submitFormValidate p {
 	display: none;
@@ -393,12 +390,9 @@ form .wrapper.errorMessage p {
 	margin: 10px 0px;
 	line-height: 20px;
 }
+/*article submission form styles end*/
 
-.radioButton {
-	/*padding-left: 10px;*/
-}
-
-/*responsive styles start*/
+/*responsive styles start*/ /*--------------------*/
 @media (max-width: 1080px) {
 	.footer {
 		text-align: center;
@@ -431,7 +425,7 @@ form .wrapper.errorMessage p {
 		text-align: center;
 	}
 
-	.sidebar h2, 
+	.sidebar h2,
 	.sidebar h4,
 	.sidebar p {
 		text-align: center;
@@ -463,4 +457,4 @@ form .wrapper.errorMessage p {
 		margin: 10px;
 	}
 }
-/*responsive styles end*/
+/*responsive styles end
