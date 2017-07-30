@@ -1,6 +1,6 @@
 # Reel Talk
 
-Personal blog turned film review website that discusses the good, the bad, and the ugly of recently watched movies. Final project for Shawn Van Every's Spring 2017 [Networked Media class](https://itp.nyu.edu/~sve204/networkedmedia_spring2017/) at New York University's Interactive Telecommunications Program (ITP).
+Personal blog turned film review website that discusses the good, the bad, and the ugly of recently watched movies. Final project for Shawn Van Every's Spring 2017 [Networked Media](https://itp.nyu.edu/~sve204/networkedmedia_spring2017/) course at New York University's Interactive Telecommunications Program (ITP).
 
 [Visit Reel Talk](http://107.170.64.239:3000/)
 
