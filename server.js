@@ -32,8 +32,8 @@ const uuidV1 = require('uuid/v1') // npm install node-uuid
 
 // for parsing data from forms
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ 
-		extended: true 
+var urlencodedParser = bodyParser.urlencoded({
+		extended: true
 });
 app.use(urlencodedParser);
 
@@ -66,7 +66,7 @@ app.get('/login', function(req, res) {
 	if (!req.session.username) {
 		res.render('login.ejs', {}); // if the user needs to login, render to login.ejs
 	} else {
-		res.render('main.ejs', req.session); 
+		res.render('main.ejs', req.session);
 		// if the user already has session data, render to main.ejs
 		// don't have a main.ejs page
 }
@@ -87,8 +87,8 @@ app.get('/', function(req, res) {
 
 app.get('/newReleases', function(req, res) {
 	var query = "new";
-	mongoData.articles.find({"category": query}, 
-	
+	mongoData.articles.find({"category": query},
+
 	function(err, saved) {
 		if( err || !saved) {
 				console.log("No articles in New Releases Category!");
@@ -104,8 +104,8 @@ app.get('/newReleases', function(req, res) {
 
 app.get('/moreLists', function(req, res) {
 	var query = "list";
-	mongoData.articles.find({"category": query}, 
-	
+	mongoData.articles.find({"category": query},
+
 	function(err, saved) {
 		if( err || !saved) {
 			console.log("No articles in More Lists Please Category!");
@@ -121,8 +121,8 @@ app.get('/moreLists', function(req, res) {
 
 app.get('/crowdPleasers', function(req, res) {
 	var query = "crowd";
-	mongoData.articles.find({"category": query}, 
-	
+	mongoData.articles.find({"category": query},
+
 	function(err, saved) {
 		if( err || !saved) {
 			console.log("No articles in More Lists Please Category!");
@@ -138,8 +138,8 @@ app.get('/crowdPleasers', function(req, res) {
 
 app.get('/ourFaves', function(req, res) {
 	var query = "fave";
-	mongoData.articles.find({"category": query}, 
-	
+	mongoData.articles.find({"category": query},
+
 	function(err, saved) {
 		if( err || !saved) {
 			console.log("No articles in More Lists Please Category!");
@@ -170,7 +170,7 @@ app.get('/search', function(req, res) {
 		// "title": query,
 		// "name": query,
 		"article": query,
-	}, 
+	},
 	function(err, saved) {
 		if( err || !saved) {
 			console.log("No results!");
@@ -193,10 +193,10 @@ app.post('/register', function(req, res) {
 	req.body.password = generateHash(req.body.password);
 
 	mongoData.logins.save(req.body, function(err, saved) {
-		if (err || !saved) { 
+		if (err || !saved) {
 			console.log('Registration not saved!');
 			res.send('Incorrect');
-	} else { 
+	} else {
 			console.log('Registration saved!');
 			res.send('Correct');
 		}
@@ -274,11 +274,11 @@ app.post('/email', function(req, res) {
 		service: "gmail",
 		host: "smtp.gmail.com",
 		auth: {
-			user: 'your Gmail address here',
-			pass: 'your Gmail password here'
+			user: 'your-gmail-address',
+			pass: 'your-gmail-password'
 		}
 	});
-	
+
 	smtpTransport.sendMail(mailOptions, function(error, response) {
 		if (error) {
 			res.send('Nope');
